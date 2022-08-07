@@ -57,8 +57,9 @@ public class WriteWordServiceImpl implements WriteWordService {
         emptyMap.put(SECONDARY_COMPANY_NAME.getKeyName(), StringUtils.defaultString(excelData.getSecondaryUnitsName(),DEFAULT_STR));
         emptyMap.put(ISSUE_NAME.getKeyName(), StringUtils.defaultString(excelData.getInvoiceInformation().getInvoiceName(),DEFAULT_STR));
         emptyMap.put(TAX_IDENTIFY_NUM.getKeyName(), StringUtils.defaultString(excelData.getInvoiceInformation().getTaxpayerNumber(),DEFAULT_STR));
-        emptyMap.put(TAX_ADDRESS.getKeyName(), StringUtils.defaultString(excelData.getInvoiceInformation().getAddressAndPhone().split("  ")[0],DEFAULT_STR));
-        emptyMap.put(TAX_PHONE.getKeyName(), StringUtils.defaultString(excelData.getInvoiceInformation().getAddressAndPhone().split("  ")[1],DEFAULT_STR));
+        int len = excelData.getInvoiceInformation().getAddressAndPhone().length();
+        emptyMap.put(TAX_ADDRESS.getKeyName(), StringUtils.defaultString(StringUtils.trim(excelData.getInvoiceInformation().getAddressAndPhone()).substring(0,len-11).split("  ")[0],DEFAULT_STR));
+        emptyMap.put(TAX_PHONE.getKeyName(), StringUtils.defaultString(StringUtils.trim(excelData.getInvoiceInformation().getAddressAndPhone()).substring(len-11,len),DEFAULT_STR));
         emptyMap.put(TAX_BANK.getKeyName(), StringUtils.defaultString(excelData.getInvoiceInformation().getOpeningBank(),DEFAULT_STR));
         emptyMap.put(TAX_ACCOUNT.getKeyName(), StringUtils.defaultString(excelData.getInvoiceInformation().getOpeningAccount(),DEFAULT_STR));
         emptyMap.put(DELI_PERSON.getKeyName(), StringUtils.defaultString(excelData.getMailingAddress().getMailContacts(),DEFAULT_STR));
