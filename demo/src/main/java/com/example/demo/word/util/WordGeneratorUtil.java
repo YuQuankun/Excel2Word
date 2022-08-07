@@ -1,4 +1,4 @@
-package com.example.demo.word.Util;
+package com.example.demo.word.util;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -30,7 +30,7 @@ public final class WordGeneratorUtil {
      * 模板常量类配置
      */
     public static final class FreemarkerTemplate {
-        public static final String TEST = "1";
+        public static final String T1 = "t_1_2";
         public static final String REPORT = "report";
         public static final String REC_RECOMMEND = "recRecommend";
 
@@ -43,7 +43,7 @@ public final class WordGeneratorUtil {
         allTemplates = new HashMap(4);
         try {
             // 注意初始化要载入对应模板
-            allTemplates.put(FreemarkerTemplate.TEST, configuration.getTemplate(FreemarkerTemplate.TEST + ".ftl"));
+            allTemplates.put(FreemarkerTemplate.T1, configuration.getTemplate(FreemarkerTemplate.T1 + ".ftl"));
 //            allTemplates.put(FreemarkerTemplate.REPORT, configuration.getTemplate(FreemarkerTemplate.REPORT + ".ftl"));
 //            allTemplates.put(FreemarkerTemplate.REC_RECOMMEND, configuration.getTemplate(FreemarkerTemplate.REC_RECOMMEND + ".ftl"));
         } catch (IOException e) {

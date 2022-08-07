@@ -28,6 +28,6 @@ class DemoApplicationTests {
 
         ExcelData excelData = readExcelServiceImpl.getExcelData(in);
         System.out.println(excelData.toString());
-        writeWordServiceImpl.writeToWord(excelData,"1");
+        writeWordServiceImpl.writeToWord(excelData,"2");
     }
 }

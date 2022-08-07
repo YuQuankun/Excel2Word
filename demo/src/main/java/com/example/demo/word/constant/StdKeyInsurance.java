@@ -1,4 +1,4 @@
-package com.example.demo.word.Enum;
+package com.example.demo.word.constant;
 
 import lombok.Getter;
 

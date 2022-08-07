@@ -3,24 +3,24 @@ package com.example.demo.excel.service.impl;
 import com.example.demo.excel.model.ExcelData;
 import com.example.demo.excel.model.InsuranceProject;
 import com.example.demo.excel.service.WriteWordService;
-import com.example.demo.word.Util.WordGeneratorUtil;
+import com.example.demo.word.util.WordGeneratorUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.ehcache.core.util.CollectionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 
-import static com.example.demo.word.Enum.StdKeyInsurance.*;
-import static com.example.demo.word.Enum.StdKeyBeInsurance.*;
-import static com.example.demo.word.Enum.StdKeyBase.*;
-import static com.example.demo.word.Enum.StdKeyPropertyInfo.*;
+import static com.example.demo.word.constant.StdKeyInsurance.*;
+import static com.example.demo.word.constant.StdKeyBeInsurance.*;
+import static com.example.demo.word.constant.StdKeyBase.*;
+import static com.example.demo.word.constant.StdKeyPropertyInfo.*;
+import static com.example.demo.word.constant.InsuranceType.*;
 
 /**
  * @author kun_mi
@@ -36,12 +36,14 @@ public class WriteWordServiceImpl implements WriteWordService {
     private static final String DEFAULT_STR = "DEFAULT_STR";
 
     @Override
-    public void writeToWord(ExcelData excelData,String type) {
+    public void writeToWord(ExcelData excelData,String targetName) {
         try {
             //构造初始Map
             Map<String,String> initialMap = new HashMap<>(SIZE);
+            //根据险种获取模板名称
+            String templateName = getTemplateName(excelData.getInsuranceInformation().getInsuranceProjectList());
             //调用Util方法
-            WordGeneratorUtil.createDoc(type,type+".doc",buildMap(initialMap,excelData));
+            WordGeneratorUtil.createDoc(templateName,targetName+".doc",buildMap(initialMap,excelData));
         }catch (Exception e){
             e.printStackTrace();
             LOGGER.error("输出为Word文档出错");
@@ -96,4 +98,26 @@ public class WriteWordServiceImpl implements WriteWordService {
         return emptyMap;
     }
 
+    public String getTemplateName(List<InsuranceProject> list){
+        String res = "t_";
+        for(int i=0; i<list.size();i++){
+            switch (getEnum(list.get(i).getAssetClasses())){
+                case PROPERTY_ALL_INSURANCE:
+                    res = res +  PROPERTY_ALL_INSURANCE.getCode();
+                    if(i!=list.size()-1){
+                        res = res + "_";
+                    }
+                    break;
+                case MACHINE_BROKE_INSURANCE:
+                    res = res +  MACHINE_BROKE_INSURANCE.getCode();
+                    if(i!=list.size()-1){
+                        res = res + "_";
+                    }
+                    break;
+                default:
+                    LOGGER.error("出现未知险种,现有模板无法覆盖");
+            }
+        }
+        return res;
+    }
 }

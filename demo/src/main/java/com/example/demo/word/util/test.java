@@ -1,6 +1,4 @@
-package com.example.demo.word.Util;
-
-import java.util.HashMap;
+package com.example.demo.word.util;
 
 public class test {
 
