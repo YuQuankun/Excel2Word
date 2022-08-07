@@ -1,5 +1,6 @@
-package com.example.demo.excel.factory;
+package com.example.demo.excel.factory.impl;
 
+import com.example.demo.excel.factory.DealData;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
@@ -21,11 +22,11 @@ public class InsuranceDateDeal implements DealData<LocalDate> {
     @Override
     public LocalDate run(Map<Integer, String> data) {
 
-        List<String> dataList = new ArrayList(data.values());
-        String insuranceDateString = dataList.get(0);
+        try {
+            List<String> dataList = new ArrayList(data.values());
+            String insuranceDateString = dataList.get(0);
 
-        if (insuranceDateString != null) {
-            try {
+            if (insuranceDateString != null) {
 
                 // 冒号切割字符串，获取日期字符串
                 List<String> contentList =
@@ -49,12 +50,11 @@ public class InsuranceDateDeal implements DealData<LocalDate> {
                 LocalDate localDate = LocalDate.parse(dateString, formatter);
 
                 return localDate;
-
-            } catch (Exception e) {
-                log.error("投保日期处理失败");
-
-                return null;
             }
+        } catch (Exception e) {
+            log.error("投保日期处理失败");
+
+            return null;
         }
 
         return null;

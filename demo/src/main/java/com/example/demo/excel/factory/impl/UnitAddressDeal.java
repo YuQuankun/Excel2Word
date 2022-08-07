@@ -1,4 +1,7 @@
-package com.example.demo.excel.factory;
+package com.example.demo.excel.factory.impl;
+
+import com.example.demo.excel.factory.DealData;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,15 +13,22 @@ import java.util.Map;
  * @description 单位地址 处理类
  * @date 2022/8/5 6:56 PM
  */
+@Slf4j
 public class UnitAddressDeal implements DealData<String> {
 
     @Override
     public String run(Map<Integer, String> data) {
 
         // map转list，取值
-        List<String> dataList = new ArrayList(data.values());
-        String unitAddress = dataList.get(1);
-        return unitAddress;
+        try {
+            List<String> dataList = new ArrayList(data.values());
+            String unitAddress = dataList.size() >= 2 ? dataList.get(1) : null;
+            return unitAddress;
+        } catch (Exception e) {
+            log.error("单位地址处理失败");
+
+            return null;
+        }
     }
 
     @Override

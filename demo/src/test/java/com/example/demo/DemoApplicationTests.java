@@ -2,7 +2,7 @@ package com.example.demo;
 
 import com.example.demo.excel.model.ExcelData;
 import com.example.demo.excel.service.impl.ReadExcelServiceImpl;
-import com.example.demo.excel.service.impl.WriteWordServiceImpl;
+import com.example.demo.word.service.impl.WriteWordServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

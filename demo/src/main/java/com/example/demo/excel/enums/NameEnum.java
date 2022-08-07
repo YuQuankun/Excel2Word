@@ -1,4 +1,4 @@
-package com.example.demo.excel.factory;
+package com.example.demo.excel.enums;
 
 /**
  * @author 曳戈泰尔
@@ -17,8 +17,8 @@ public enum NameEnum {
     ID(8, "投保人签章"),
     ;
 
-    Integer code;
-    String name;
+    public Integer code;
+    public String name;
 
     NameEnum(Integer code, String name) {
         this.code = code;

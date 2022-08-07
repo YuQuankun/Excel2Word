@@ -1,9 +1,9 @@
-package com.example.demo.excel.service.impl;
+package com.example.demo.word.service.impl;
 
 import com.example.demo.excel.model.ExcelData;
 import com.example.demo.excel.model.InsuranceProject;
-import com.example.demo.excel.service.WriteWordService;
-import com.example.demo.word.util.WordGeneratorUtil;
+import com.example.demo.word.service.WriteWordService;
+import com.example.demo.word.utils.WordGeneratorUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.concurrent.atomic.AtomicReference;
 
 import static com.example.demo.word.constant.StdKeyInsurance.*;
 import static com.example.demo.word.constant.StdKeyBeInsurance.*;

@@ -1,4 +1,4 @@
-package com.example.demo.word.util;
+package com.example.demo.word.utils;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
