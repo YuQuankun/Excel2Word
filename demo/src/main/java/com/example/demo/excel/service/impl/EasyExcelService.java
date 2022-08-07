@@ -46,7 +46,7 @@ public class EasyExcelService extends AnalysisEventListener<Map<Integer, String>
                         .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 
         // 数据传入策略模型赋值实体
-        strategySign.strategySign(temp);
+        strategySign.strategySign(temp, data);
     }
 
     /**

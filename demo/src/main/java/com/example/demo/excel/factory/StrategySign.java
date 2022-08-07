@@ -40,7 +40,7 @@ public class StrategySign {
     /** 投保信息flag */
     private Integer insuranceInformationFlag = 0;
 
-    public void strategySign(Map<Integer, String> data) {
+    public void strategySign(Map<Integer, String> data, Map<Integer, String> originData) {
 
         // 名称
         // 通过名称关键词获取策略code
@@ -50,7 +50,7 @@ public class StrategySign {
 
         // 处理投保信息合并单元格数据
         if (code == NameEnum.ISI.code || insuranceInformationFlag == 1) {
-            insuranceInformationMapList.add(data);
+            insuranceInformationMapList.add(originData);
 
             if (insuranceInformationFlag == 0) {
                 insuranceInformationFlag = 1;

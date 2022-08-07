@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * @author 曳戈泰尔
@@ -42,27 +43,36 @@ public class InsuranceInformationDeal implements DealData<InsuranceInformation> 
 
             // 遍历处理所有Map
             for (Map<Integer, String> map : data) {
+
+                // 获取有效数据的Map
+                Map<Integer, String> validMap =
+                        map.entrySet().stream()
+                                .filter(e -> e.getValue() != null)
+                                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+
                 // Map转List
-                List<String> dataList = new ArrayList(map.values());
+                // 有效数据
+                List<String> dataValidList = new ArrayList(validMap.values());
 
                 // 不处理row
-                if ("投保信息".equals(dataList.get(0).replace("\n", ""))
-                        || "资产清单".equals(dataList.get(0).replace("\n", ""))
-                        || "投保人申明".equals(dataList.get(0).replace("\n", ""))) {
+                if ("投保信息".equals(dataValidList.get(0).replace("\n", ""))
+                        || "资产清单".equals(dataValidList.get(0).replace("\n", ""))
+                        || "投保人申明".equals(dataValidList.get(0).replace("\n", ""))) {
                     continue;
                 }
 
                 // 处理财产坐落地址
-                if ("财产坐落地址".equals(dataList.get(0).replace("\n", ""))) {
-                    String propertyAddress = dataList.size() >= 2 ? dataList.get(1) : null;
+                if ("财产坐落地址".equals(dataValidList.get(0).replace("\n", ""))) {
+                    String propertyAddress =
+                            dataValidList.size() >= 2 ? dataValidList.get(1) : null;
                     insuranceInformation.setPropertyAddress(propertyAddress);
                     continue;
                 }
 
                 // 开始时间，字符串标准化
                 String startDate = null;
-                if (dataList.size() >= 6) {
-                    List<String> startDateList = Arrays.asList(dataList.get(5).split("/"));
+                if (map.get(6) != null) {
+                    List<String> startDateList = Arrays.asList(map.get(6).split("/"));
                     startDate =
                             ""
                                     + startDateList.get(0)
@@ -78,8 +88,8 @@ public class InsuranceInformationDeal implements DealData<InsuranceInformation> 
 
                 // 结束时间，字符串标准化
                 String endDate = null;
-                if (dataList.size() >= 7) {
-                    List<String> endDateList = Arrays.asList(dataList.get(6).split("/"));
+                if (map.get(7) != null) {
+                    List<String> endDateList = Arrays.asList(map.get(7).split("/"));
                     endDate =
                             ""
                                     + endDateList.get(0)
@@ -96,33 +106,33 @@ public class InsuranceInformationDeal implements DealData<InsuranceInformation> 
                 // 处理项目数据
                 InsuranceProject insuranceProject =
                         InsuranceProject.builder()
-                                .projectName(dataList.size() >= 1 ? dataList.get(0) : null)
-                                .assetInsurance(dataList.size() >= 2 ? dataList.get(1) : null)
-                                .assetClasses(dataList.size() >= 3 ? dataList.get(2) : null)
-                                .rate(dataList.size() >= 4 ? Float.valueOf(dataList.get(3)) : null)
+                                .projectName(map.get(1) != null ? map.get(1) : null)
+                                .assetInsurance(map.get(2) != null ? map.get(2) : null)
+                                .assetClasses(map.get(3) != null ? map.get(3) : null)
+                                .rate(map.get(4) != null ? Float.valueOf(map.get(4)) : null)
                                 .insuranceAmount(
-                                        dataList.size() >= 5
-                                                ? new BigDecimal(dataList.get(4).replace(",", ""))
+                                        map.get(5) != null
+                                                ? new BigDecimal(map.get(5).replace(",", ""))
                                                 : null)
                                 .startDate(
-                                        dataList.size() >= 6
+                                        map.get(6) != null
                                                 ? LocalDate.parse(
                                                         startDate,
                                                         DateTimeFormatter.ofPattern("yyyy-MM-dd"))
                                                 : null)
                                 .endDate(
-                                        dataList.size() >= 7
+                                        map.get(7) != null
                                                 ? LocalDate.parse(
                                                         endDate,
                                                         DateTimeFormatter.ofPattern("yyyy-MM-dd"))
                                                 : null)
                                 .insuranceDays(
-                                        dataList.size() >= 8
-                                                ? (Float.valueOf(dataList.get(7))).intValue()
+                                        map.get(8) != null
+                                                ? (Float.valueOf(map.get(8))).intValue()
                                                 : null)
                                 .insurancePremium(
-                                        dataList.size() >= 9
-                                                ? new BigDecimal(dataList.get(8).replace(",", ""))
+                                        map.get(9) != null
+                                                ? new BigDecimal(map.get(9).replace(",", ""))
                                                         .setScale(2, RoundingMode.HALF_UP)
                                                 : null)
                                 .build();
