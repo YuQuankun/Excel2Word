@@ -41,7 +41,7 @@ public class WriteWordServiceImpl implements WriteWordService {
             //构造初始Map
             Map<String,String> initialMap = new HashMap<>(SIZE);
             //调用Util方法
-            WordGeneratorUtil.createDoc(type,type+".word",buildMap(initialMap,excelData));
+            WordGeneratorUtil.createDoc(type,type+".doc",buildMap(initialMap,excelData));
         }catch (Exception e){
             e.printStackTrace();
             LOGGER.error("输出为Word文档出错");
