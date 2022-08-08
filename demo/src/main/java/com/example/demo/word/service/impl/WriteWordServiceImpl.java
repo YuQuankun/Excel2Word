@@ -203,6 +203,7 @@ public class WriteWordServiceImpl implements WriteWordService {
                     break;
             }
         }
+        lowerNumNow=lowerNumNow.substring(0,5)+lowerNumNow.substring(5).replace("○","");
         emptyMap.put(CURRENT_DATE.getKeyName(), lowerNumNow);
 
         return emptyMap;

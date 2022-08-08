@@ -9,7 +9,7 @@ package com.example.demo.word.utils;
 public class NumUtils {
 
     /** num 表示数字，lower表示小写 */
-    private static final String[] num_lower = {"o", "一", "二", "三", "四", "五", "六", "七", "八", "九"};
+    private static final String[] num_lower = {"○", "一", "二", "三", "四", "五", "六", "七", "八", "九"};
 
     public static String getLowerNum(int num) {
         // 遍历寻找值
