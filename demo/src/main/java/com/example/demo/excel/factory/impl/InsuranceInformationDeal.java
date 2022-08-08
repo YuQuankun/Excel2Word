@@ -148,7 +148,10 @@ public class InsuranceInformationDeal implements DealData<InsuranceInformation> 
         } catch (Exception e) {
             log.error("投保信息处理失败");
 
-            return new InsuranceInformation();
+            // 实体内数组返回空数组，而不是null
+            InsuranceInformation insuranceInformationEx = new InsuranceInformation();
+            insuranceInformationEx.setInsuranceProjectList(new ArrayList<>());
+            return insuranceInformationEx;
         }
     }
 }
