@@ -1,0 +1,682 @@
+                    <w:tbl>
+                        <w:tblPr>
+                            <w:tblW w:w="8522" w:type="dxa"/>
+                            <w:jc w:val="center"/>
+                            <w:tblBorders>
+                                <w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+                                <w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+                                <w:bottom w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+                                <w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+                                <w:insideH w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+                                <w:insideV w:val="single" w:sz="4" w:space="0" w:color="auto"/>
+                            </w:tblBorders>
+                            <w:tblLayout w:type="fixed"/>
+                            <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0"
+                                       w:noHBand="0" w:noVBand="1"/>
+                        </w:tblPr>
+                        <w:tblGrid>
+                            <w:gridCol w:w="6086"/>
+                            <w:gridCol w:w="963"/>
+                            <w:gridCol w:w="1473"/>
+                        </w:tblGrid>
+                        <w:tr w:rsidR="00F151AD" w14:paraId="683644B1" w14:textId="77777777">
+                            <w:trPr>
+                                <w:trHeight w:val="590"/>
+                                <w:jc w:val="center"/>
+                            </w:trPr>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="6086" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="54A7E84A" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:b/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:b/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>保险公司</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="963" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="4887429D" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:b/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:b/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>份额</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="1473" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="081351D0" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:b/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:b/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>份额内保费（元）</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                        </w:tr>
+                        <w:tr w:rsidR="00F151AD" w14:paraId="79EDF6D9" w14:textId="77777777">
+                            <w:trPr>
+                                <w:trHeight w:val="590"/>
+                                <w:jc w:val="center"/>
+                            </w:trPr>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="6086" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="04F639FC" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="left"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>主承保人：英大泰和财产保险股份有限公司北京分公司</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="963" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="751B1970" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>40%</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="1473" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="2BABD3ED" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:widowControl/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>2603.62</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                        </w:tr>
+                        <w:tr w:rsidR="00F151AD" w14:paraId="0411910D" w14:textId="77777777">
+                            <w:trPr>
+                                <w:trHeight w:val="590"/>
+                                <w:jc w:val="center"/>
+                            </w:trPr>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="6086" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="3923D52C" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="left"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>共保人1：永诚财产保险股份有限公司河北分公司</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="963" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="2EB5DA05" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>25%</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="1473" w:type="dxa"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="1179ADE9" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:widowControl/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>1627.26</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                        </w:tr>
+                        <w:tr w:rsidR="00F151AD" w14:paraId="4A471DD4" w14:textId="77777777">
+                            <w:trPr>
+                                <w:trHeight w:val="590"/>
+                                <w:jc w:val="center"/>
+                            </w:trPr>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="6086" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="30F64530" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="left"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>共保人2：中国人民财产保险股份有限公司北京市分公司</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="963" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="72C91561" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>15%</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="1473" w:type="dxa"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="27462D5D" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:widowControl/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>976.35</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                        </w:tr>
+                        <w:tr w:rsidR="00F151AD" w14:paraId="5F201BB5" w14:textId="77777777">
+                            <w:trPr>
+                                <w:trHeight w:val="590"/>
+                                <w:jc w:val="center"/>
+                            </w:trPr>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="6086" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="25502E13" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="left"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>共保人3：中国人寿财产保险股份有限公司长春中心支公司</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="963" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="10046380" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>10%</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="1473" w:type="dxa"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="1369DBC0" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:widowControl/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>650.90</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                        </w:tr>
+                        <w:tr w:rsidR="00F151AD" w14:paraId="7C67F7EE" w14:textId="77777777">
+                            <w:trPr>
+                                <w:trHeight w:val="590"/>
+                                <w:jc w:val="center"/>
+                            </w:trPr>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="6086" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="6DD3C91D" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="left"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>共保人4：中国太平洋财产保险股份有限公司山西分公司</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="963" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="70D75FFC" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>10%</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="1473" w:type="dxa"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="118A2988" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:widowControl/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>650.90</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                        </w:tr>
+                        <w:tr w:rsidR="00F151AD" w14:paraId="37AB5EC3" w14:textId="77777777">
+                            <w:trPr>
+                                <w:trHeight w:val="590"/>
+                                <w:jc w:val="center"/>
+                            </w:trPr>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="6086" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="3B9F6823" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:b/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:b/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>合 计</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="963" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="6D6AD829" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:b/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK"/>
+                                            <w:b/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>100%</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                            <w:tc>
+                                <w:tcPr>
+                                    <w:tcW w:w="1473" w:type="dxa"/>
+                                    <w:vAlign w:val="center"/>
+                                </w:tcPr>
+                                <w:p w14:paraId="36F387BE" w14:textId="77777777" w:rsidR="00F151AD"
+                                     w:rsidRDefault="00000000">
+                                    <w:pPr>
+                                        <w:snapToGrid w:val="0"/>
+                                        <w:jc w:val="center"/>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:b/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                    </w:pPr>
+                                    <w:r>
+                                        <w:rPr>
+                                            <w:rFonts w:ascii="方正仿宋_GBK" w:eastAsia="方正仿宋_GBK" w:hAnsi="方正仿宋_GBK"
+                                                      w:cs="方正仿宋_GBK" w:hint="default"/>
+                                            <w:b/>
+                                            <w:bCs/>
+                                            <w:sz w:val="24"/>
+                                            <w:szCs w:val="24"/>
+                                        </w:rPr>
+                                        <w:t>${insurance_cost1}</w:t>
+                                    </w:r>
+                                </w:p>
+                            </w:tc>
+                        </w:tr>
+                    </w:tbl>
