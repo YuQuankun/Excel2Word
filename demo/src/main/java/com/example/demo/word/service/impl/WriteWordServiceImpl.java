@@ -75,12 +75,18 @@ public class WriteWordServiceImpl implements WriteWordService {
                 StringUtils.defaultString(
                         excelData.getInvoiceInformation().getTaxpayerNumber(), DEFAULT_STR));
         int len =
-                excelData.getInvoiceInformation().getAddressAndPhone().replaceAll(" ", "").length();
+                excelData
+                        .getInvoiceInformation()
+                        .getAddressAndPhone()
+                        .replaceAll(" ", "")
+                        .replaceAll("\n", "")
+                        .length();
         emptyMap.put(
                 TAX_ADDRESS.getKeyName(),
                 StringUtils.defaultString(
                         StringUtils.trim(excelData.getInvoiceInformation().getAddressAndPhone())
                                 .replaceAll(" ", "")
+                                .replaceAll("\n", "")
                                 .substring(0, len - 11),
                         DEFAULT_STR));
         emptyMap.put(
@@ -88,6 +94,7 @@ public class WriteWordServiceImpl implements WriteWordService {
                 StringUtils.defaultString(
                         StringUtils.trim(excelData.getInvoiceInformation().getAddressAndPhone())
                                 .replaceAll(" ", "")
+                                .replaceAll("\n", "")
                                 .substring(len - 11, len),
                         DEFAULT_STR));
         emptyMap.put(
