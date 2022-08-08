@@ -189,7 +189,7 @@
                                     <w:sz w:val="72"/>
                                     <w:szCs w:val="72"/>
                                 </w:rPr>
-                                <w:t>有限公司</w:t>
+                                <w:t></w:t>
                             </w:r>
                         </w:p>
                         <w:p w14:paraId="7F24BC5C" w14:textId="77777777" w:rsidR="00F151AD" w:rsidRDefault="00F151AD">
@@ -6912,7 +6912,7 @@
                                                 <w:sz w:val="24"/>
                                                 <w:szCs w:val="24"/>
                                             </w:rPr>
-                                            <w:t>8806.34</w:t>
+                                            <w:t>${insurance_cost2}</w:t>
                                         </w:r>
                                     </w:p>
                                 </w:tc>

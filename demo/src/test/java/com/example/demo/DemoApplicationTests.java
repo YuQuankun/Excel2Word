@@ -23,11 +23,11 @@ class DemoApplicationTests {
     void readExcel() {
 
         // 获取文件输入流
-        String fileName = "1.财产类保险投保单-2022元氏.xls";
+        String fileName = "新建 XLSX 工作表.xlsx";
         InputStream in = this.getClass().getResourceAsStream("/static/" + fileName);
 
         ExcelData excelData = readExcelServiceImpl.getExcelData(in);
         System.out.println(excelData.toString());
-        writeWordServiceImpl.writeToWord(excelData,"2");
+        writeWordServiceImpl.writeToWord(excelData,"4");
     }
 }

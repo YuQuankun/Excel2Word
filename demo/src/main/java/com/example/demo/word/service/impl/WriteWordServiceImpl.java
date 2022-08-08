@@ -52,7 +52,7 @@ public class WriteWordServiceImpl implements WriteWordService {
     public Map<String,String> buildMap(Map<String,String> emptyMap,ExcelData excelData){
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy年MM月dd日");
         //投保人信息、被保险人信息
-        emptyMap.put(INSURANCE.getKeyName(), null==excelData.getApplicantName()?DEFAULT_STR: excelData.getApplicantName().replace("有限公司",""));
+        emptyMap.put(INSURANCE.getKeyName(), null==excelData.getApplicantName()?DEFAULT_STR: excelData.getApplicantName().replace("有限公司\n",""));
         emptyMap.put(INSURANCE_FULL.getKeyName(), StringUtils.defaultString(excelData.getApplicantName(),DEFAULT_STR));
         emptyMap.put(INSURANCE_NUMBER.getKeyName(), "000000000000000000000");
         emptyMap.put(SECONDARY_COMPANY_NAME.getKeyName(), StringUtils.defaultString(excelData.getSecondaryUnitsName(),DEFAULT_STR));
