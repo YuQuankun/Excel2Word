@@ -24,7 +24,7 @@ import java.util.UUID;
 @Slf4j
 public class Word2XmlUtil {
 
-    public static final String tempFile = "./temp/";
+    public static final String tempUrl = "./temp/";
 
     /**
      * @param in
@@ -44,10 +44,10 @@ public class Word2XmlUtil {
             // 对HWPFDocument进行转换
             converter.processDocument(wordDocument);
 
-            Writer writer = new FileWriter(tempFile + fileName);
+            Writer writer = new FileWriter(tempUrl + fileName);
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
 
-            transformer.setOutputProperty(OutputKeys.ENCODING, "utf-8");
+            transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
             // 是否添加空格
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 
