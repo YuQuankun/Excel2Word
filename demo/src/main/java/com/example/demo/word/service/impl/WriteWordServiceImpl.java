@@ -54,7 +54,7 @@ public class WriteWordServiceImpl implements WriteWordService {
         PutData2WordUtil.putPropertyInfoExcel2Map(emptyMap,excelData);
         PutData2WordUtil.putDateExcel2Map(emptyMap,excelData);
         //TODO 补全文件名称
-        SectionParam sectionParam = ReadXmlSectionUtil.readXmlSection("D:\\new\\Excel2Word\\demo\\src\\main\\resources\\static\\财产一切险3.xml");
+        SectionParam sectionParam = ReadXmlSectionUtil.readXmlSection("D:\\new\\Excel2Word\\demo\\src\\main\\resources\\static\\财产一切险4.xml");
         PutData2WordUtil.putSectionToMap(emptyMap,sectionParam);
         return emptyMap;
     }
