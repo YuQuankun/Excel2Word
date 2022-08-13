@@ -31,7 +31,7 @@ class DemoApplicationTests {
         String fileName = "1.财产类保险投保单-2022元氏.xls";
         InputStream in = this.getClass().getResourceAsStream("/static/" + fileName);
         ExcelData excelData = readExcelServiceImpl.getExcelData(in);
-        System.out.println(excelData.toString());
+        // System.out.println(excelData.toString());
 
         writeWordServiceImpl.writeToWord(excelData, "4");
     }
@@ -53,13 +53,13 @@ class DemoApplicationTests {
 
         // 提取章节内容
         SectionParam sectionData = ReadXmlSectionUtil.readXmlSection(fileUrlAndName);
-        System.out.println(sectionParam.toString());
+        // System.out.println(sectionParam.toString());
         BeanUtils.copyProperties(sectionData, sectionParam);
 
         // 提取表格参数
         SectionParam paramData = ReadXmlParamUtil.readXmlParam(fileUrlAndName);
-        System.out.println(sectionParam.toString());
-        BeanUtils.copyProperties(paramData, sectionParam);
+        // System.out.println(sectionParam.toString());
+        sectionParam.setQuotaList(paramData.getQuotaList());
 
         System.out.println(sectionParam.toString());
     }

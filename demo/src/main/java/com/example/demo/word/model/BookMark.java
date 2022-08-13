@@ -1,9 +1,6 @@
 package com.example.demo.word.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * @author 曳戈泰尔
@@ -12,9 +9,9 @@ import lombok.NoArgsConstructor;
  * @date 2022/8/13 11:16 AM
  */
 @Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+// @Builder
+// @AllArgsConstructor
+// @NoArgsConstructor
 public class BookMark {
 
     /** 分割书签1 */
@@ -27,10 +24,18 @@ public class BookMark {
             "<aml:annotation aml:id=\"1\" w:name=\"分割2\" w:type=\"Word.Bookmark.Start\"/>"
                     + "<aml:annotation aml:id=\"1\" w:type=\"Word.Bookmark.End\"/>";
 
+    /** 分割书签2 标记提取数据开始 */
+    private String bookMark2Deal =
+            "aml:annotation aml:id='1' w:name='分割2' w:type='Word.Bookmark.Start'";
+
     /** 分割书签3 */
     private String bookMark3 =
             "<aml:annotation aml:id=\"2\" w:name=\"分割3\" w:type=\"Word.Bookmark.Start\"/>"
                     + "<aml:annotation aml:id=\"2\" w:type=\"Word.Bookmark.End\"/>";
+
+    /** 分割书签3 标记提取数据结束 */
+    private String bookMark3Deal =
+            "aml:annotation aml:id='2' w:name='分割3' w:type='Word.Bookmark.Start'";
 
     /** 分割书签4 */
     private String bookMark4 =

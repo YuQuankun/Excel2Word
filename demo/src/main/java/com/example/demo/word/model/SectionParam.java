@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -26,7 +27,7 @@ public class SectionParam {
     private String insurerAndPremium;
 
     /** 份额比例参数数组 */
-    private List<Float> quotaList;
+    private List<Float> quotaList = new ArrayList<>(20);
 
     /** 付费方式 */
     private String paymentMethod;
