@@ -3,6 +3,7 @@ package com.example.demo.word.utils;
 import com.example.demo.word.model.BookMark;
 import com.example.demo.word.model.SectionParam;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.FileUtils;
 import org.w3c.dom.Document;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -39,21 +40,21 @@ public class ReadXmlSectionUtil {
 
         try {
             // 读取 xml 文件
-            File fileInput = new File(fileUrlAndName);
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(fileInput);
-            DOMSource domSource = new DOMSource(doc);
-            StringWriter writer = new StringWriter();
-            StreamResult result = new StreamResult(writer);
-            TransformerFactory tf = TransformerFactory.newInstance();
-            Transformer transformer = tf.newTransformer();
-            transformer.transform(domSource, result);
+//            File fileInput = new File(fileUrlAndName);
+//            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+//            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+//            Document doc = dBuilder.parse(fileInput);
+//            DOMSource domSource = new DOMSource(doc);
+//            StringWriter writer = new StringWriter();
+//            StreamResult result = new StreamResult(writer);
+//            TransformerFactory tf = TransformerFactory.newInstance();
+//            Transformer transformer = tf.newTransformer();
+//            transformer.transform(domSource, result);
 
             // 将转换过的xml的String 样式打印到控制台
             // System.out.println(writer.toString());
-            String xmlContent = writer.toString();
-
+            //String xmlContent = writer.toString();
+            String xmlContent = FileUtils.readFileToString(new File(fileUrlAndName),"utf-8");
             // 书签x位置(第一个字符开始位置)
             int bookMark1Index = xmlContent.indexOf(bookMark.getBookMark1());
             int bookMark2Index = xmlContent.indexOf(bookMark.getBookMark2());
@@ -94,6 +95,7 @@ public class ReadXmlSectionUtil {
                             bookMark6Index + bookMark.getBookMark6().length(), bookMark7Index));
 
         } catch (Exception e) {
+            e.printStackTrace();
             log.error("提取XML文件章节内容失败：{}", e.getMessage());
         }
 

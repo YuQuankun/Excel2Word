@@ -2,6 +2,7 @@ package com.example.demo.word.utils;
 
 import com.example.demo.excel.model.ExcelData;
 import com.example.demo.excel.model.InsuranceProject;
+import com.example.demo.word.model.SectionParam;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -14,12 +15,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import static com.example.demo.word.constant.StdKeyBase.CURRENT_DATE;
-import static com.example.demo.word.constant.StdKeyBase.YEAR;
-import static com.example.demo.word.constant.StdKeyBeInsurance.BE_INSURANCE_ADDRESS;
-import static com.example.demo.word.constant.StdKeyBeInsurance.BE_INSURANCE_NAME;
+import static com.example.demo.word.constant.StdKeyBase.*;
+import static com.example.demo.word.constant.StdKeyBeInsurance.*;
 import static com.example.demo.word.constant.StdKeyInsurance.*;
 import static com.example.demo.word.constant.StdKeyPropertyInfo.*;
+import static com.example.demo.word.constant.StdKeySection.*;
 
 /**
  * @author kun_mi
@@ -192,5 +192,19 @@ public class PutData2WordUtil {
             }
         }
         emptyMap.put(CURRENT_DATE.getKeyName(), lowerNumNow);
+    }
+
+    public static void putSectionToMap(Map<String, String> emptyMap, SectionParam sectionParam){
+        try {
+            emptyMap.put(DeductibleExcess.getKeyName(),StringUtils.defaultString(sectionParam.getDeductibleExcess(),DEFAULT_STR));
+            emptyMap.put(InsurerAndPremium.getKeyName(),StringUtils.defaultString(sectionParam.getInsurerAndPremium(),DEFAULT_STR));
+            emptyMap.put(PaymentMethod.getKeyName(),sectionParam.getPaymentMethod());
+            emptyMap.put(InsuranceBroker.getKeyName(),sectionParam.getInsuranceBroker());
+            emptyMap.put(SpecialAgreement.getKeyName(),sectionParam.getSpecialAgreement());
+            emptyMap.put(AdditionalPerilsClause.getKeyName(),sectionParam.getAdditionalPerilsClause());
+        }
+        catch (Exception e){
+            LOGGER.error("插入Word章节信息出错:{}",e.getMessage());
+        }
     }
 }

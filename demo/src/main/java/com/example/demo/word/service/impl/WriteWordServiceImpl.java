@@ -2,8 +2,10 @@ package com.example.demo.word.service.impl;
 
 import com.example.demo.excel.model.ExcelData;
 import com.example.demo.excel.model.InsuranceProject;
+import com.example.demo.word.model.SectionParam;
 import com.example.demo.word.service.WriteWordService;
 import com.example.demo.word.utils.PutData2WordUtil;
+import com.example.demo.word.utils.ReadXmlSectionUtil;
 import com.example.demo.word.utils.WordGeneratorUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -51,9 +53,9 @@ public class WriteWordServiceImpl implements WriteWordService {
         PutData2WordUtil.putInsuranceInfoExcel2Map(emptyMap,excelData);
         PutData2WordUtil.putPropertyInfoExcel2Map(emptyMap,excelData);
         PutData2WordUtil.putDateExcel2Map(emptyMap,excelData);
-        File file =  new File("C:\\Users\\kun_mi\\Desktop\\curl命令模板.txt");
-        String s = FileUtils.readFileToString(file,"utf-8");
-        emptyMap.put("zhangjie8",s);
+        //TODO 补全文件名称
+        SectionParam sectionParam = ReadXmlSectionUtil.readXmlSection("D:\\new\\Excel2Word\\demo\\src\\main\\resources\\static\\财产一切险3.xml");
+        PutData2WordUtil.putSectionToMap(emptyMap,sectionParam);
         return emptyMap;
     }
 
