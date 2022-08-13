@@ -28,6 +28,9 @@ public class SectionParam {
     /** 份额比例参数数组 */
     private List<Float> quotaList;
 
+    /** 付费方式 */
+    private String paymentMethod;
+
     /** 保险经纪人 */
     private String insuranceBroker;
 

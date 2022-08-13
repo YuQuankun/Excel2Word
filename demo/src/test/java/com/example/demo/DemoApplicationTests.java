@@ -53,13 +53,11 @@ class DemoApplicationTests {
 
         // 提取章节内容
         SectionParam sectionData = ReadXmlSectionUtil.readXmlSection(fileUrlAndName);
-        assert sectionData != null;
         System.out.println(sectionParam.toString());
         BeanUtils.copyProperties(sectionData, sectionParam);
 
         // 提取表格参数
         SectionParam paramData = ReadXmlParamUtil.readXmlParam(fileUrlAndName);
-        assert paramData != null;
         System.out.println(sectionParam.toString());
         BeanUtils.copyProperties(paramData, sectionParam);
 

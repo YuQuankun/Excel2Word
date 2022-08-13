@@ -29,6 +29,9 @@ public class ReadXmlParamUtil {
      */
     public static SectionParam readXmlParam(String fileUrlAndName) {
 
+        // 初始化返回实体
+        SectionParam sectionParam = new SectionParam();
+
         try {
             XMLInputFactory factory = XMLInputFactory.newInstance();
             XMLEventReader eventReader =
@@ -59,9 +62,9 @@ public class ReadXmlParamUtil {
             }
 
         } catch (Exception e) {
-            log.error("提取XML文件内容失败：{}", e.getMessage());
+            log.error("提取XML文件参数内容失败：{}", e.getMessage());
         }
 
-        return null;
+        return sectionParam;
     }
 }
