@@ -15,6 +15,10 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author 曳戈泰尔
@@ -101,5 +105,22 @@ public class ReadXmlSectionUtil {
         }
 
         return sectionParam;
+    }
+
+    public static void main(String[] args) throws IOException {
+        Pattern pattern = Pattern.compile("<w:p.*?</w:p>");
+        String xmlContent = FileUtils.readFileToString(new File((File) null,"demo/src/main/resources/static/财产一切险4.xml"),"utf-8");
+        List<String> s  = new ArrayList<>();
+        Matcher m = pattern.matcher(xmlContent);
+        int matcher_start = 0;
+        while (m.find(matcher_start)){
+            s.add(m.group(0));
+            matcher_start = m.end();
+        }
+        for(String value :  s){
+            if(value.contains("分割6")){
+                System.out.println(value);
+            }
+        }
     }
 }

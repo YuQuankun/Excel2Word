@@ -198,10 +198,10 @@ public class PutData2WordUtil {
         try {
             emptyMap.put(DeductibleExcess.getKeyName(),StringUtils.defaultString(sectionParam.getDeductibleExcess(),DEFAULT_STR));
             emptyMap.put(InsurerAndPremium.getKeyName(),StringUtils.defaultString(sectionParam.getInsurerAndPremium(),DEFAULT_STR));
-            emptyMap.put(PaymentMethod.getKeyName(),sectionParam.getPaymentMethod());
-            emptyMap.put(InsuranceBroker.getKeyName(),sectionParam.getInsuranceBroker());
-            emptyMap.put(SpecialAgreement.getKeyName(),sectionParam.getSpecialAgreement());
-            emptyMap.put(AdditionalPerilsClause.getKeyName(),sectionParam.getAdditionalPerilsClause());
+            emptyMap.put(PaymentMethod.getKeyName(),StringUtils.defaultString(sectionParam.getPaymentMethod(),DEFAULT_STR));
+            emptyMap.put(InsuranceBroker.getKeyName(),StringUtils.defaultString(sectionParam.getInsuranceBroker(),DEFAULT_STR));
+            emptyMap.put(SpecialAgreement.getKeyName(),StringUtils.defaultString(sectionParam.getSpecialAgreement(),DEFAULT_STR));
+            emptyMap.put(AdditionalPerilsClause.getKeyName(),StringUtils.defaultString(sectionParam.getAdditionalPerilsClause(),DEFAULT_STR));
         }
         catch (Exception e){
             LOGGER.error("插入Word章节信息出错:{}",e.getMessage());
