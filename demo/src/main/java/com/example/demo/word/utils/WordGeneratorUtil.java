@@ -60,13 +60,13 @@ public final class WordGeneratorUtil {
      * 创建doc 文档
      * dataMap 数据，需要对应模板的占位符，否则会出错
      * @param dataMap 数据
-     * @param wordName  word 报表的名称
+     * @param wordPath  word 报表的路径名称
      * @param freemarkerTemplateName  指定需要使用哪个freemarker模板
      * @return
      */
-    public static File createDoc(String freemarkerTemplateName, String wordName, Map<String, String> dataMap) {
+    public static File createDoc(String freemarkerTemplateName, String wordPath, Map<String, String> dataMap) {
         try {
-            File f = new File("D:\\"+wordName);
+            File f = new File(wordPath);
             Template t = allTemplates.get(freemarkerTemplateName);
             // 这个地方不能使用FileWriter因为需要指定编码类型否则生成的Word文档会因为有无法识别的编码而无法打开
             Writer w = new OutputStreamWriter(new FileOutputStream(f), StandardCharsets.UTF_8);

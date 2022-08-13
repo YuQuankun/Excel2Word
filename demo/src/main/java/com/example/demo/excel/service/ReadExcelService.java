@@ -19,4 +19,6 @@ public interface ReadExcelService {
      * @return
      */
     ExcelData getExcelData(InputStream inputStream);
+
+    ExcelData getExcelData(String filePath);
 }

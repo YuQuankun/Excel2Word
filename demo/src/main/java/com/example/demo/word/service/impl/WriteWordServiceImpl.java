@@ -29,7 +29,7 @@ public class WriteWordServiceImpl implements WriteWordService {
 
 
     @Override
-    public void writeToWord(ExcelData excelData, String targetName) {
+    public boolean writeToWord(ExcelData excelData, String targetPath) {
         try {
             // 构造初始Map
             Map<String, String> initialMap = new HashMap<>(SIZE);
@@ -38,11 +38,13 @@ public class WriteWordServiceImpl implements WriteWordService {
                     getTemplateName(excelData.getInsuranceInformation().getInsuranceProjectList());
             // 调用Util方法
             WordGeneratorUtil.createDoc(
-                    templateName, targetName + ".doc", buildMap(initialMap, excelData));
+                    templateName, targetPath, buildMap(initialMap, excelData));
         } catch (Exception e) {
             e.printStackTrace();
             LOGGER.error("输出为Word文档出错");
+            return false;
         }
+        return true;
     }
 
     public Map<String, String> buildMap(Map<String, String> emptyMap, ExcelData excelData) throws IOException {

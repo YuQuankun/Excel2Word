@@ -66,6 +66,9 @@ dependencies {
     // https://mvnrepository.com/artifact/org.apache.poi/poi-scratchpad
     implementation group: 'org.apache.poi', name: 'poi-scratchpad', version: '5.0.0'
 
+    //swagger3相关依赖
+//    implementation group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+
 }
 
 tasks.named('test') {
