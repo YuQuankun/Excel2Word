@@ -51,20 +51,47 @@ public class ReadXmlSectionUtil {
             transformer.transform(domSource, result);
 
             // 将转换过的xml的String 样式打印到控制台
-            System.out.println(writer.toString());
+            // System.out.println(writer.toString());
+            String xmlContent = writer.toString();
+
+            // 书签x位置(第一个字符开始位置)
+            int bookMark1Index = xmlContent.indexOf(bookMark.getBookMark1());
+            int bookMark2Index = xmlContent.indexOf(bookMark.getBookMark2());
+            int bookMark3Index = xmlContent.indexOf(bookMark.getBookMark3());
+            int bookMark4Index = xmlContent.indexOf(bookMark.getBookMark4());
+            int bookMark5Index = xmlContent.indexOf(bookMark.getBookMark5());
+            int bookMark6Index = xmlContent.indexOf(bookMark.getBookMark6());
+            int bookMark7Index = xmlContent.indexOf(bookMark.getBookMark7());
 
             // 提取 四、免赔额（人民币）
-            // sectionParam.setDeductibleExcess();
+            sectionParam.setDeductibleExcess(
+                    xmlContent.substring(
+                            bookMark1Index + bookMark.getBookMark1().length(), bookMark2Index));
+
             // 提取 八、保险人及保险费(含税)
-            // sectionParam.setInsurerAndPremium();
+            sectionParam.setInsurerAndPremium(
+                    xmlContent.substring(
+                            bookMark2Index + bookMark.getBookMark2().length(), bookMark3Index));
+
             // 提取 九、付费方式
-            // sectionParam.setPaymentMethod();
+            sectionParam.setPaymentMethod(
+                    xmlContent.substring(
+                            bookMark3Index + bookMark.getBookMark3().length(), bookMark4Index));
+
             // 提取 十、保险经纪人
-            // sectionParam.setInsuranceBroker();
+            sectionParam.setInsuranceBroker(
+                    xmlContent.substring(
+                            bookMark4Index + bookMark.getBookMark4().length(), bookMark5Index));
+
             // 提取 十二、特别约定
-            // sectionParam.setSpecialAgreement();
+            sectionParam.setSpecialAgreement(
+                    xmlContent.substring(
+                            bookMark5Index + bookMark.getBookMark5().length(), bookMark6Index));
+
             // 提取 十三、附加险条款
-            // sectionParam.setAdditionalPerilsClause();
+            sectionParam.setAdditionalPerilsClause(
+                    xmlContent.substring(
+                            bookMark6Index + bookMark.getBookMark6().length(), bookMark7Index));
 
         } catch (Exception e) {
             log.error("提取XML文件章节内容失败：{}", e.getMessage());
