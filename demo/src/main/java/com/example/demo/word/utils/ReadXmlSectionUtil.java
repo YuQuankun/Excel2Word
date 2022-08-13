@@ -13,6 +13,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.io.IOException;
 import java.io.StringWriter;
 
 /**
@@ -54,7 +55,7 @@ public class ReadXmlSectionUtil {
             // 将转换过的xml的String 样式打印到控制台
             // System.out.println(writer.toString());
             //String xmlContent = writer.toString();
-            String xmlContent = FileUtils.readFileToString(new File(fileUrlAndName),"utf-8");
+            String xmlContent = FileUtils.readFileToString(new File((File) null,fileUrlAndName),"utf-8");
             // 书签x位置(第一个字符开始位置)
             int bookMark1Index = xmlContent.indexOf(bookMark.getBookMark1());
             int bookMark2Index = xmlContent.indexOf(bookMark.getBookMark2());

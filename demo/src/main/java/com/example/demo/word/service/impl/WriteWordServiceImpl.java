@@ -40,7 +40,7 @@ public class WriteWordServiceImpl implements WriteWordService {
                     getTemplateName(excelData.getInsuranceInformation().getInsuranceProjectList());
             // 调用Util方法
             WordGeneratorUtil.createDoc(
-                    templateName, targetPath, buildMap(initialMap, excelData));
+                    templateName, targetPath, buildMap(initialMap, excelData,"src/main/resources/static/财产一切险4.xml"));
         } catch (Exception e) {
             e.printStackTrace();
             LOGGER.error("输出为Word文档出错");
@@ -49,12 +49,12 @@ public class WriteWordServiceImpl implements WriteWordService {
         return true;
     }
 
-    public Map<String, String> buildMap(Map<String, String> emptyMap, ExcelData excelData) throws IOException {
+    public Map<String, String> buildMap(Map<String, String> emptyMap, ExcelData excelData, String wordFileUrl) {
         PutData2WordUtil.putInsuranceInfoExcel2Map(emptyMap,excelData);
         PutData2WordUtil.putPropertyInfoExcel2Map(emptyMap,excelData);
         PutData2WordUtil.putDateExcel2Map(emptyMap,excelData);
         //TODO 补全文件名称
-        SectionParam sectionParam = ReadXmlSectionUtil.readXmlSection("D:\\new\\Excel2Word\\demo\\src\\main\\resources\\static\\财产一切险4.xml");
+        SectionParam sectionParam = ReadXmlSectionUtil.readXmlSection(wordFileUrl);
         PutData2WordUtil.putSectionToMap(emptyMap,sectionParam);
         return emptyMap;
     }
