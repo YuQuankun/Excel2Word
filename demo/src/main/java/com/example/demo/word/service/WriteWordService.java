@@ -9,5 +9,5 @@ import org.springframework.stereotype.Service;
  */
 public interface WriteWordService {
 
-    void writeToWord(ExcelData excelData,String targetName);
+    boolean writeToWord(ExcelData excelData,String targetName);
 }

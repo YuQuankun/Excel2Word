@@ -32,8 +32,7 @@ class DemoApplicationTests {
         InputStream in = this.getClass().getResourceAsStream("/static/" + fileName);
         ExcelData excelData = readExcelServiceImpl.getExcelData(in);
         System.out.println(excelData.toString());
-
-        writeWordServiceImpl.writeToWord(excelData, "4");
+        writeWordServiceImpl.writeToWord(excelData, "D:\\4.doc");
     }
 
     @Test
