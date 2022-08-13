@@ -19,7 +19,7 @@ import java.io.FileReader;
  * @date 2022/8/10 12:17 AM
  */
 @Slf4j
-public class ReadXmlSectionUtil {
+public class ReadXmlParamUtil {
 
     /**
      * 输入xml文件路径，提取所需数据到实体
@@ -27,7 +27,7 @@ public class ReadXmlSectionUtil {
      * @param fileUrlAndName
      * @return
      */
-    public static SectionParam readXmlSection(String fileUrlAndName) {
+    public static SectionParam readXmlParam(String fileUrlAndName) {
 
         try {
             XMLInputFactory factory = XMLInputFactory.newInstance();

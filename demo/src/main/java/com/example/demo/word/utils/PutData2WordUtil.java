@@ -19,9 +19,7 @@ import static com.example.demo.word.constant.StdKeyBase.YEAR;
 import static com.example.demo.word.constant.StdKeyBeInsurance.BE_INSURANCE_ADDRESS;
 import static com.example.demo.word.constant.StdKeyBeInsurance.BE_INSURANCE_NAME;
 import static com.example.demo.word.constant.StdKeyInsurance.*;
-import static com.example.demo.word.constant.StdKeyInsurance.DELI_EMAIL;
 import static com.example.demo.word.constant.StdKeyPropertyInfo.*;
-import static com.example.demo.word.constant.StdKeyPropertyInfo.INSURANCE_COST;
 
 /**
  * @author kun_mi
@@ -34,10 +32,12 @@ public class PutData2WordUtil {
 
     /**
      * 插入投保人信息,被保险人信息
+     *
      * @param emptyMap 结果Map
      * @param excelData excel数据
      */
-    public static void putInsuranceInfoExcel2Map(Map<String, String> emptyMap, ExcelData excelData){
+    public static void putInsuranceInfoExcel2Map(
+            Map<String, String> emptyMap, ExcelData excelData) {
         // 投保人信息、被保险人信息
         emptyMap.put(
                 INSURANCE.getKeyName(),
@@ -112,7 +112,7 @@ public class PutData2WordUtil {
                 StringUtils.defaultString(excelData.getUnitAddress(), DEFAULT_STR));
     }
 
-    public static void putPropertyInfoExcel2Map(Map<String, String> emptyMap, ExcelData excelData){
+    public static void putPropertyInfoExcel2Map(Map<String, String> emptyMap, ExcelData excelData) {
         // 保险财产信息
         emptyMap.put(
                 PROPERTY_ADDRESS.getKeyName(),
@@ -162,7 +162,7 @@ public class PutData2WordUtil {
         }
     }
 
-    public static void putDateExcel2Map(Map<String, String> emptyMap, ExcelData excelData){
+    public static void putDateExcel2Map(Map<String, String> emptyMap, ExcelData excelData) {
         // 基本信息
         Calendar calendar = Calendar.getInstance();
         emptyMap.put(YEAR.getKeyName(), String.valueOf(calendar.get(Calendar.YEAR)));
@@ -173,7 +173,7 @@ public class PutData2WordUtil {
         String lowerNumNow = "";
         for (int i = 0; i < now.length(); i++) {
             lowerNumNow =
-                    lowerNumNow + NumUtils.getLowerNum(Character.getNumericValue(now.charAt(i)));
+                    lowerNumNow + NumUtil.getLowerNum(Character.getNumericValue(now.charAt(i)));
             switch (i) {
                 case 3:
                     lowerNumNow = lowerNumNow + "年";

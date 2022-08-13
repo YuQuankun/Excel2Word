@@ -6,7 +6,7 @@ package com.example.demo.word.utils;
  * @description 数字转化汉子类
  * @date 2022/8/8 6:22 PM
  */
-public class NumUtils {
+public class NumUtil {
 
     /** num 表示数字，lower表示小写 */
     private static final String[] num_lower = {"o", "一", "二", "三", "四", "五", "六", "七", "八", "九"};
