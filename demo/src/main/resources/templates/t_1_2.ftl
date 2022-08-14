@@ -1335,7 +1335,7 @@
                                 <w:sz w:val="24"/>
                                 <w:szCs w:val="24"/>
                             </w:rPr>
-                            <w:t>RMB${insurance_amount1}元</w:t>
+                            <w:t>RMB ${insurance_amount1}元</w:t>
                         </w:r>
                     </w:p>
                     ${deductibleExcess}
@@ -1845,7 +1845,7 @@
                                 <w:sz w:val="24"/>
                                 <w:szCs w:val="24"/>
                             </w:rPr>
-                            <w:t>RMB${insurance_amount2}元</w:t>
+                            <w:t>RMB ${insurance_amount2}元</w:t>
                         </w:r>
                     </w:p>
                     <w:p w14:paraId="5947737F" w14:textId="77777777" w:rsidR="00F151AD" w:rsidRDefault="00000000">
