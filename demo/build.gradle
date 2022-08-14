@@ -24,7 +24,11 @@ configurations {
 }
 
 repositories {
+    mavenLocal()
+    // 阿里云Maven远程仓库
+    maven { url 'https://maven.aliyun.com/repository/public/' }
     mavenCentral()
+    maven { url 'https://repo.e-iceblue.cn/repository/maven-public/' }
 }
 
 dependencies {
@@ -71,6 +75,10 @@ dependencies {
 
     // https://mvnrepository.com/artifact/com.github.xiaoymin/knife4j-spring-boot-starter
     implementation group: 'com.github.xiaoymin', name: 'knife4j-spring-boot-starter', version: '3.0.3'
+
+    // https://mvnrepository.com/artifact/e-iceblue/spire.doc.free
+    implementation group: 'e-iceblue', name: 'spire.doc.free', version: '5.2.0'
+
 
 }
 

@@ -1,5 +1,7 @@
 package com.example.demo.word.utils;
 
+import com.spire.doc.Document;
+import com.spire.doc.FileFormat;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.hwpf.HWPFDocument;
 import org.apache.poi.hwpf.converter.WordToFoConverter;
@@ -49,9 +51,33 @@ public class Word2XmlUtil {
 
             transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
             // 是否添加空格
-            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+            transformer.setOutputProperty(OutputKeys.INDENT, "no");
 
             transformer.transform(new DOMSource(converter.getDocument()), new StreamResult(writer));
+
+            return fileName;
+        } catch (Exception e) {
+            log.error("Word转XML失败：{}", e.getMessage());
+
+            return null;
+        }
+    }
+
+    /**
+     * @param wordFileUrlAndName
+     * @return 文件名
+     */
+    public static String wordToXml2(String wordFileUrlAndName) {
+
+        try {
+            String fileName = tempUrl + UUID.randomUUID() + ".xml";
+
+            Document doc = new Document();
+            doc.loadFromFile(wordFileUrlAndName);
+
+            // 调用方法转为xml文件
+            doc.saveToFile(fileName, FileFormat.Word_Xml);
+            doc.dispose();
 
             return fileName;
         } catch (Exception e) {

@@ -98,8 +98,8 @@ public class ReadAndWriteController {
         ExcelData excelData = excelService.getExcelData(new FileInputStream(newExcelFile));
 
         String xmlSuffix =
-                Objects.requireNonNull(excelFile.getOriginalFilename())
-                        .substring(excelFile.getOriginalFilename().lastIndexOf(".") + 1);
+                Objects.requireNonNull(xmlFile.getOriginalFilename())
+                        .substring(xmlFile.getOriginalFilename().lastIndexOf(".") + 1);
         String newXmlFileName = "./temp/" + UUID.randomUUID() + "." + xmlSuffix;
         File newXmlFile = new File((File) null, newXmlFileName);
         FileUtils.copyInputStreamToFile(xmlFile.getInputStream(), newXmlFile);
@@ -144,14 +144,15 @@ public class ReadAndWriteController {
         ExcelData excelData = excelService.getExcelData(new FileInputStream(newExcelFile));
 
         String wordSuffix =
-                Objects.requireNonNull(excelFile.getOriginalFilename())
-                        .substring(excelFile.getOriginalFilename().lastIndexOf(".") + 1);
+                Objects.requireNonNull(wordFile.getOriginalFilename())
+                        .substring(wordFile.getOriginalFilename().lastIndexOf(".") + 1);
         String newWordFileName = "./temp/" + UUID.randomUUID() + "." + wordSuffix;
         File newWordFile = new File((File) null, newWordFileName);
         FileUtils.copyInputStreamToFile(wordFile.getInputStream(), newWordFile);
 
         // word转xml
-        String newXmlFileName = Word2XmlUtil.wordToXml(new FileInputStream(newWordFile));
+        // String newXmlFileName = Word2XmlUtil.wordToXml(new FileInputStream(newWordFile));
+        String newXmlFileName = Word2XmlUtil.wordToXml2(newWordFileName);
         assert newXmlFileName != null;
         File newXmlFile = new File(newXmlFileName);
 
