@@ -1,6 +1,9 @@
 package com.example.demo.word.param;
 
 import lombok.Data;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
 //import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
@@ -8,6 +11,8 @@ import lombok.Data;
  */
 @Data
 public class QueryParam {
+
+    private MultipartFile file1;
 
 //    @Schema(description = "Excel表格读取路径",required = true)
     private String excelFilePath;

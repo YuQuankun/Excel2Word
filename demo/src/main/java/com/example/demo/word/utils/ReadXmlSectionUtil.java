@@ -88,6 +88,62 @@ public class ReadXmlSectionUtil {
         return sectionParam;
     }
 
+    public static SectionParam readXmlSection(File wordFile){
+        // 初始化返回实体
+        SectionParam sectionParam = new SectionParam();
+        // 初始化分割字符串
+        BookMark bookMark = setMark(wordFile);
+
+        try {
+
+            String xmlContent = FileUtils.readFileToString(wordFile,"utf-8");
+            // 书签x位置(第一个字符开始位置)
+            int bookMark1Index = xmlContent.indexOf(bookMark.getBookMark1());
+            int bookMark2Index = xmlContent.indexOf(bookMark.getBookMark2());
+            int bookMark3Index = xmlContent.indexOf(bookMark.getBookMark3());
+            int bookMark4Index = xmlContent.indexOf(bookMark.getBookMark4());
+            int bookMark5Index = xmlContent.indexOf(bookMark.getBookMark5());
+            int bookMark6Index = xmlContent.indexOf(bookMark.getBookMark6());
+            int bookMark7Index = xmlContent.indexOf(bookMark.getBookMark7());
+
+            // 提取 四、免赔额（人民币）
+            sectionParam.setDeductibleExcess(
+                    xmlContent.substring(
+                            bookMark1Index + bookMark.getBookMark1().length(), bookMark2Index));
+
+            // 提取 八、保险人及保险费(含税)
+            sectionParam.setInsurerAndPremium(
+                    xmlContent.substring(
+                            bookMark2Index + bookMark.getBookMark2().length(), bookMark3Index));
+
+            // 提取 九、付费方式
+            sectionParam.setPaymentMethod(
+                    xmlContent.substring(
+                            bookMark3Index + bookMark.getBookMark3().length(), bookMark4Index));
+
+            // 提取 十、保险经纪人
+            sectionParam.setInsuranceBroker(
+                    xmlContent.substring(
+                            bookMark4Index + bookMark.getBookMark4().length(), bookMark5Index));
+
+            // 提取 十二、特别约定
+            sectionParam.setSpecialAgreement(
+                    xmlContent.substring(
+                            bookMark5Index + bookMark.getBookMark5().length(), bookMark6Index));
+
+            // 提取 十三、附加险条款
+            sectionParam.setAdditionalPerilsClause(
+                    xmlContent.substring(
+                            bookMark6Index + bookMark.getBookMark6().length(), bookMark7Index));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            log.error("提取XML文件章节内容失败：{}", e.getMessage());
+        }
+
+        return sectionParam;
+    }
+
     public static BookMark setMark(String fileUrlAndName){
         BookMark bookMark = new BookMark();
         try {
@@ -128,6 +184,50 @@ public class ReadXmlSectionUtil {
         }catch (Exception e){
              log.error("匹配标签失败:{}",e.getMessage());
              e.printStackTrace();
+        }
+        return bookMark;
+    }
+
+    public static BookMark setMark(File wordFile){
+        BookMark bookMark = new BookMark();
+        try {
+            String xmlContent = FileUtils.readFileToString(wordFile,"utf-8");
+            Pattern pattern = Pattern.compile("<w:p.*?</w:p>");
+            Matcher m = pattern.matcher(xmlContent);
+            List<String> bookMarkList  = new ArrayList<>();
+            int matcher_start = 0;
+            while (m.find(matcher_start)){
+                bookMarkList.add(m.group(0));
+                matcher_start = m.end();
+            }
+            for(String value : bookMarkList){
+                if(value.contains("分割1")){
+                    bookMark.setBookMark1(value);
+                }
+                if(value.contains("分割2")){
+                    bookMark.setBookMark2(value);
+                    bookMark.setBookMark2Deal(value);
+                }
+                if(value.contains("分割3")){
+                    bookMark.setBookMark3(value);
+                    bookMark.setBookMark3Deal(value);
+                }
+                if(value.contains("分割4")){
+                    bookMark.setBookMark4(value);
+                }
+                if(value.contains("分割5")){
+                    bookMark.setBookMark5(value);
+                }
+                if(value.contains("分割6")){
+                    bookMark.setBookMark6(value);
+                }
+                if(value.contains("分割7")){
+                    bookMark.setBookMark7(value);
+                }
+            }
+        }catch (Exception e){
+            log.error("匹配标签失败:{}",e.getMessage());
+            e.printStackTrace();
         }
         return bookMark;
     }

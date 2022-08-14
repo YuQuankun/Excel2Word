@@ -77,4 +77,43 @@ public class ReadXmlParamUtil {
         }
         return sectionParam;
     }
+    public static SectionParam readXmlParam(File wordFile)  {
+
+        // 初始化返回实体
+        SectionParam sectionParam = new SectionParam();
+        // 初始化分割字符串
+        //TODO 增加方法
+        BookMark bookMark = ReadXmlSectionUtil.setMark(wordFile);
+
+        // 初始化参数数组
+        List<Float> quotaList = new ArrayList<>(20);
+
+        try {
+
+            //第一次正则匹配,匹配出第八部分的所有XML数据
+            String xmlContent = FileUtils.readFileToString(wordFile, "utf-8");
+            Pattern pattern = Pattern.compile(bookMark.getBookMark2Deal() + ".*?" + bookMark.getBookMark3Deal());
+            Matcher matcher = pattern.matcher(xmlContent);
+            String xmlContent8 = "";
+            if(matcher.find()){
+                xmlContent8 = matcher.group();
+            }
+            System.out.println(xmlContent8);
+
+            //第二次正则,匹配出所有带百分号的数据
+            Pattern pattern1 = Pattern.compile("[0-9]+%");
+            Matcher matcher1 = pattern1.matcher(xmlContent8);
+            int matcher_start = 0;
+            while (matcher1.find(matcher_start)){
+                quotaList.add(Float.parseFloat(matcher1.group(0).replace("%",""))/100);
+                matcher_start = matcher1.end();
+            }
+            sectionParam.setQuotaList(quotaList);
+        }
+        catch (Exception e){
+            LOGGER.error("获取表格参数失败:{}",e.getMessage());
+            e.printStackTrace();
+        }
+        return sectionParam;
+    }
 }

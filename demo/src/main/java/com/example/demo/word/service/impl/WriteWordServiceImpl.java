@@ -43,7 +43,7 @@ public class WriteWordServiceImpl implements WriteWordService {
                     getTemplateName(excelData.getInsuranceInformation().getInsuranceProjectList());
             // 调用Util方法
             WordGeneratorUtil.createDoc(
-                    templateName, targetPath, buildMap(initialMap, excelData,"src/main/resources/static/财产一切险4.xml"));
+                    templateName, targetPath, buildMap(initialMap, excelData,"demo/src/main/resources/static/财产一切险4.xml"));
         } catch (Exception e) {
             e.printStackTrace();
             LOGGER.error("输出为Word文档出错");
@@ -51,6 +51,26 @@ public class WriteWordServiceImpl implements WriteWordService {
         }
         return true;
     }
+
+    @Override
+    public boolean writeToWord(ExcelData excelData, File wordFile, String wordOutPath) {
+        try {
+            // 构造初始Map
+            Map<String, String> initialMap = new HashMap<>(SIZE);
+            // 根据险种获取模板名称
+            String templateName =
+                    getTemplateName(excelData.getInsuranceInformation().getInsuranceProjectList());
+            // 调用Util方法
+            WordGeneratorUtil.createDoc(
+                    templateName, wordOutPath, buildMap(initialMap, excelData,wordFile));
+        } catch (Exception e) {
+            e.printStackTrace();
+            LOGGER.error("输出为Word文档出错");
+            return false;
+        }
+        return true;
+    }
+
 
     public Map<String, String> buildMap(Map<String, String> emptyMap, ExcelData excelData, String wordFileUrl) {
         //插入Excel表格数据
@@ -66,6 +86,52 @@ public class WriteWordServiceImpl implements WriteWordService {
         //插入Word模板中的数据
         List<Float> quotaList  = ReadXmlParamUtil.readXmlParam(wordFileUrl).getQuotaList();
         SectionParam sectionParam = ReadXmlSectionUtil.readXmlSection(wordFileUrl);
+        String section8 = sectionParam.getInsurerAndPremium();
+        for(int i=0; i<quotaList.size()-1;i++){
+            String s =String.valueOf( money.multiply(BigDecimal.valueOf(quotaList.get(i))).setScale(2,BigDecimal.ROUND_HALF_UP));
+            switch (TableNumber.getEnum(i)){
+                case ONE:
+                    section8 = section8.replace(TableNumber.ONE.getValue(),s);
+                    break;
+                case TWO:
+                    section8 = section8.replace(TableNumber.TWO.getValue(),s);
+                    break;
+                case THREE:
+                    section8 = section8.replace(TableNumber.THREE.getValue(),s);
+                    break;
+                case FOUR:
+                    section8 = section8.replace(TableNumber.FOUR.getValue(),s);
+                    break;
+                case FIVE:
+                    section8 = section8.replace(TableNumber.FIVE.getValue(),s);
+                    break;
+                case SIX:
+                    section8 = section8.replace(TableNumber.SIX.getValue(),s);
+                    break;
+                default:
+                    break;
+            }
+        }
+        section8 = section8.replace("${all}",String.valueOf(money));
+        sectionParam.setInsurerAndPremium(section8);
+        PutData2WordUtil.putSectionToMap(emptyMap,sectionParam);
+        return emptyMap;
+    }
+
+    public Map<String, String> buildMap(Map<String, String> emptyMap, ExcelData excelData, File wordFile){
+        //插入Excel表格数据
+        PutData2WordUtil.putInsuranceInfoExcel2Map(emptyMap,excelData);
+        PutData2WordUtil.putPropertyInfoExcel2Map(emptyMap,excelData);
+        PutData2WordUtil.putDateExcel2Map(emptyMap,excelData);
+        BigDecimal money = new BigDecimal(1);
+        for(InsuranceProject insuranceProject:excelData.getInsuranceInformation().getInsuranceProjectList()){
+            if("财产一切险".equals(insuranceProject.getAssetClasses())){
+                money = insuranceProject.getInsuranceAmount();
+            }
+        }
+        //插入Word模板中的数据
+        List<Float> quotaList  = ReadXmlParamUtil.readXmlParam(wordFile).getQuotaList();
+        SectionParam sectionParam = ReadXmlSectionUtil.readXmlSection(wordFile);
         String section8 = sectionParam.getInsurerAndPremium();
         for(int i=0; i<quotaList.size()-1;i++){
             String s =String.valueOf( money.multiply(BigDecimal.valueOf(quotaList.get(i))).setScale(2,BigDecimal.ROUND_HALF_UP));
