@@ -10,9 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.UUID;
 
 /**
  * @author kun_mi
@@ -77,10 +80,11 @@ public class ReadAndWriteController {
                 allowMultiple = true,
                 paramType = "form")
     })
-    public boolean readAndWriteAndDownload(
+    public void readAndWriteAndDownload(
+            HttpServletRequest request,
+            HttpServletResponse response,
             @RequestPart("excelFile") MultipartFile excelFile,
-            @RequestPart("wordFile") MultipartFile wordFile,
-            @RequestParam("wordOutPath") String wordFilePath)
+            @RequestPart("wordFile") MultipartFile wordFile)
             throws IOException {
 
         File newExcelFile = new File((File) null, "demo/src/main/resource/tempExcel");
@@ -89,7 +93,11 @@ public class ReadAndWriteController {
 
         File newWordFile = new File((File) null, "demo/src/main/resource/tempWord");
         FileUtils.copyInputStreamToFile(wordFile.getInputStream(), newWordFile);
-        return writeWordService.writeToWord(excelData, newWordFile, wordFilePath);
+
+        String wordFilePath = "demo/src/main/resource/output/" + UUID.randomUUID() + ".doc";
+        writeWordService.writeToWord(excelData, newWordFile, wordFilePath);
+
+        writeWordService.downloadFile(request, response, wordFilePath);
     }
 
     @Autowired
