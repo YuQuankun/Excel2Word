@@ -2,9 +2,11 @@ package com.example.demo.word.service.impl;
 
 import com.example.demo.excel.model.ExcelData;
 import com.example.demo.excel.model.InsuranceProject;
+import com.example.demo.word.constant.TableNumber;
 import com.example.demo.word.model.SectionParam;
 import com.example.demo.word.service.WriteWordService;
 import com.example.demo.word.utils.PutData2WordUtil;
+import com.example.demo.word.utils.ReadXmlParamUtil;
 import com.example.demo.word.utils.ReadXmlSectionUtil;
 import com.example.demo.word.utils.WordGeneratorUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +17,7 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.*;
 
 import static com.example.demo.word.constant.InsuranceType.*;
@@ -50,11 +53,47 @@ public class WriteWordServiceImpl implements WriteWordService {
     }
 
     public Map<String, String> buildMap(Map<String, String> emptyMap, ExcelData excelData, String wordFileUrl) {
+        //插入Excel表格数据
         PutData2WordUtil.putInsuranceInfoExcel2Map(emptyMap,excelData);
         PutData2WordUtil.putPropertyInfoExcel2Map(emptyMap,excelData);
         PutData2WordUtil.putDateExcel2Map(emptyMap,excelData);
-        //TODO 补全文件名称
+        BigDecimal money = new BigDecimal(1);
+        for(InsuranceProject insuranceProject:excelData.getInsuranceInformation().getInsuranceProjectList()){
+            if("财产一切险".equals(insuranceProject.getAssetClasses())){
+                money = insuranceProject.getInsuranceAmount();
+            }
+        }
+        //插入Word模板中的数据
+        List<Float> quotaList  = ReadXmlParamUtil.readXmlParam(wordFileUrl).getQuotaList();
         SectionParam sectionParam = ReadXmlSectionUtil.readXmlSection(wordFileUrl);
+        String section8 = sectionParam.getInsurerAndPremium();
+        for(int i=0; i<quotaList.size()-1;i++){
+            String s =String.valueOf( money.multiply(BigDecimal.valueOf(quotaList.get(i))).setScale(2,BigDecimal.ROUND_HALF_UP));
+            switch (TableNumber.getEnum(i)){
+                case ONE:
+                    section8 = section8.replace(TableNumber.ONE.getValue(),s);
+                    break;
+                case TWO:
+                    section8 = section8.replace(TableNumber.TWO.getValue(),s);
+                    break;
+                case THREE:
+                    section8 = section8.replace(TableNumber.THREE.getValue(),s);
+                    break;
+                case FOUR:
+                    section8 = section8.replace(TableNumber.FOUR.getValue(),s);
+                    break;
+                case FIVE:
+                    section8 = section8.replace(TableNumber.FIVE.getValue(),s);
+                    break;
+                case SIX:
+                    section8 = section8.replace(TableNumber.SIX.getValue(),s);
+                    break;
+                default:
+                    break;
+            }
+        }
+        section8 = section8.replace("${all}",String.valueOf(money));
+        sectionParam.setInsurerAndPremium(section8);
         PutData2WordUtil.putSectionToMap(emptyMap,sectionParam);
         return emptyMap;
     }
