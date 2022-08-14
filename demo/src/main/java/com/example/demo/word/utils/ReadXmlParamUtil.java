@@ -96,7 +96,7 @@ public class ReadXmlParamUtil {
             System.out.println(xmlContent8);
 
             // 第二次正则,匹配出所有带百分号的数据
-            Pattern pattern1 = Pattern.compile("<w:t>[0-9]+.*?</w:t>");
+            Pattern pattern1 = Pattern.compile("<w:t>([0-9]|%)+.*?</w:t>");
             Matcher matcher1 = pattern1.matcher(xmlContent8);
             int matcher_start = 0;
             String temp = "";
