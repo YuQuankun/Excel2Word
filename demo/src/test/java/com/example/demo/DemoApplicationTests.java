@@ -36,7 +36,7 @@ class DemoApplicationTests {
         String fileName = "1.财产类保险投保单-2022元氏.xls";
         InputStream in = this.getClass().getResourceAsStream("/static/" + fileName);
         ExcelData excelData = readExcelServiceImpl.getExcelData(in);
-        writeWordServiceImpl.writeToWord(excelData, "D:\\5.doc");
+        writeWordServiceImpl.writeToWord(excelData, "D:\\6.doc");
     }
 
     @Test

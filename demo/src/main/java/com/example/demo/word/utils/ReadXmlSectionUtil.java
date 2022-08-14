@@ -6,12 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.w3c.dom.Document;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
@@ -41,24 +36,10 @@ public class ReadXmlSectionUtil {
         // 初始化返回实体
         SectionParam sectionParam = new SectionParam();
         // 初始化分割字符串
-        BookMark bookMark = new BookMark();
+        BookMark bookMark = setMark(fileUrlAndName);
 
         try {
-            // 读取 xml 文件
-//            File fileInput = new File(fileUrlAndName);
-//            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-//            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-//            Document doc = dBuilder.parse(fileInput);
-//            DOMSource domSource = new DOMSource(doc);
-//            StringWriter writer = new StringWriter();
-//            StreamResult result = new StreamResult(writer);
-//            TransformerFactory tf = TransformerFactory.newInstance();
-//            Transformer transformer = tf.newTransformer();
-//            transformer.transform(domSource, result);
 
-            // 将转换过的xml的String 样式打印到控制台
-            // System.out.println(writer.toString());
-            //String xmlContent = writer.toString();
             String xmlContent = FileUtils.readFileToString(new File((File) null,fileUrlAndName),"utf-8");
             // 书签x位置(第一个字符开始位置)
             int bookMark1Index = xmlContent.indexOf(bookMark.getBookMark1());
@@ -107,20 +88,48 @@ public class ReadXmlSectionUtil {
         return sectionParam;
     }
 
-    public static void main(String[] args) throws IOException {
-        Pattern pattern = Pattern.compile("<w:p.*?</w:p>");
-        String xmlContent = FileUtils.readFileToString(new File((File) null,"demo/src/main/resources/static/财产一切险4.xml"),"utf-8");
-        List<String> s  = new ArrayList<>();
-        Matcher m = pattern.matcher(xmlContent);
-        int matcher_start = 0;
-        while (m.find(matcher_start)){
-            s.add(m.group(0));
-            matcher_start = m.end();
-        }
-        for(String value :  s){
-            if(value.contains("分割6")){
-                System.out.println(value);
+    public static BookMark setMark(String fileUrlAndName){
+        BookMark bookMark = new BookMark();
+        try {
+            String xmlContent = FileUtils.readFileToString(new File((File) null,fileUrlAndName),"utf-8");
+            Pattern pattern = Pattern.compile("<w:p.*?</w:p>");
+            Matcher m = pattern.matcher(xmlContent);
+            List<String> bookMarkList  = new ArrayList<>();
+            int matcher_start = 0;
+            while (m.find(matcher_start)){
+                bookMarkList.add(m.group(0));
+                matcher_start = m.end();
             }
+            for(String value : bookMarkList){
+                if(value.contains("分割1")){
+                    bookMark.setBookMark1(value);
+                }
+                if(value.contains("分割2")){
+                    bookMark.setBookMark2(value);
+                    bookMark.setBookMark2Deal(value);
+                }
+                if(value.contains("分割3")){
+                    bookMark.setBookMark3(value);
+                    bookMark.setBookMark3Deal(value);
+                }
+                if(value.contains("分割4")){
+                    bookMark.setBookMark4(value);
+                }
+                if(value.contains("分割5")){
+                    bookMark.setBookMark5(value);
+                }
+                if(value.contains("分割6")){
+                    bookMark.setBookMark6(value);
+                }
+                if(value.contains("分割7")){
+                    bookMark.setBookMark7(value);
+                }
+            }
+        }catch (Exception e){
+             log.error("匹配标签失败:{}",e.getMessage());
+             e.printStackTrace();
         }
+        return bookMark;
     }
+
 }
