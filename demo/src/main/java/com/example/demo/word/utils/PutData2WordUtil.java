@@ -15,8 +15,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import static com.example.demo.word.constant.StdKeyBase.*;
-import static com.example.demo.word.constant.StdKeyBeInsurance.*;
+import static com.example.demo.word.constant.StdKeyBase.CURRENT_DATE;
+import static com.example.demo.word.constant.StdKeyBase.YEAR;
+import static com.example.demo.word.constant.StdKeyBeInsurance.BE_INSURANCE_ADDRESS;
+import static com.example.demo.word.constant.StdKeyBeInsurance.BE_INSURANCE_NAME;
 import static com.example.demo.word.constant.StdKeyInsurance.*;
 import static com.example.demo.word.constant.StdKeyPropertyInfo.*;
 import static com.example.demo.word.constant.StdKeySection.*;
@@ -191,20 +193,33 @@ public class PutData2WordUtil {
                     break;
             }
         }
+        lowerNumNow = lowerNumNow.substring(0, 5) + lowerNumNow.substring(5).replace("○", "");
         emptyMap.put(CURRENT_DATE.getKeyName(), lowerNumNow);
     }
 
-    public static void putSectionToMap(Map<String, String> emptyMap, SectionParam sectionParam){
+    public static void putSectionToMap(Map<String, String> emptyMap, SectionParam sectionParam) {
         try {
-            emptyMap.put(DeductibleExcess.getKeyName(),StringUtils.defaultString(sectionParam.getDeductibleExcess(),DEFAULT_STR));
-            emptyMap.put(InsurerAndPremium.getKeyName(),StringUtils.defaultString(sectionParam.getInsurerAndPremium(),DEFAULT_STR));
-            emptyMap.put(PaymentMethod.getKeyName(),StringUtils.defaultString(sectionParam.getPaymentMethod(),DEFAULT_STR));
-            emptyMap.put(InsuranceBroker.getKeyName(),StringUtils.defaultString(sectionParam.getInsuranceBroker(),DEFAULT_STR));
-            emptyMap.put(SpecialAgreement.getKeyName(),StringUtils.defaultString(sectionParam.getSpecialAgreement(),DEFAULT_STR));
-            emptyMap.put(AdditionalPerilsClause.getKeyName(),StringUtils.defaultString(sectionParam.getAdditionalPerilsClause(),DEFAULT_STR));
-        }
-        catch (Exception e){
-            LOGGER.error("插入Word章节信息出错:{}",e.getMessage());
+            emptyMap.put(
+                    DeductibleExcess.getKeyName(),
+                    StringUtils.defaultString(sectionParam.getDeductibleExcess(), DEFAULT_STR));
+            emptyMap.put(
+                    InsurerAndPremium.getKeyName(),
+                    StringUtils.defaultString(sectionParam.getInsurerAndPremium(), DEFAULT_STR));
+            emptyMap.put(
+                    PaymentMethod.getKeyName(),
+                    StringUtils.defaultString(sectionParam.getPaymentMethod(), DEFAULT_STR));
+            emptyMap.put(
+                    InsuranceBroker.getKeyName(),
+                    StringUtils.defaultString(sectionParam.getInsuranceBroker(), DEFAULT_STR));
+            emptyMap.put(
+                    SpecialAgreement.getKeyName(),
+                    StringUtils.defaultString(sectionParam.getSpecialAgreement(), DEFAULT_STR));
+            emptyMap.put(
+                    AdditionalPerilsClause.getKeyName(),
+                    StringUtils.defaultString(
+                            sectionParam.getAdditionalPerilsClause(), DEFAULT_STR));
+        } catch (Exception e) {
+            LOGGER.error("插入Word章节信息出错:{}", e.getMessage());
         }
     }
 }
