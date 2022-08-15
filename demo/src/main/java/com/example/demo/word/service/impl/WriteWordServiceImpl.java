@@ -125,7 +125,7 @@ public class WriteWordServiceImpl implements WriteWordService {
             }
         }
         int index = section8.indexOf("佰");
-        log.info("位置: "+index);
+        log.info("位置: " + index);
         section8 = section8.replace("佰", String.valueOf(money));
         sectionParam.setInsurerAndPremium(section8);
         PutData2WordUtil.putSectionToMap(emptyMap, sectionParam);
@@ -177,7 +177,7 @@ public class WriteWordServiceImpl implements WriteWordService {
                     break;
             }
         }
-        section8 = section8.replace("${all}", String.valueOf(money));
+        section8 = section8.replace("佰", String.valueOf(money));
         sectionParam.setInsurerAndPremium(section8);
         PutData2WordUtil.putSectionToMap(emptyMap, sectionParam);
         return emptyMap;
