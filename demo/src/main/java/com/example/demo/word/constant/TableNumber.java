@@ -10,14 +10,14 @@ import lombok.Getter;
 @Getter
 public enum TableNumber {
 
-    ONE(0,"${one}"),
-    TWO(1,"${two}"),
-    THREE(2,"${three}"),
-    FOUR(3,"${four}"),
-    FIVE(4,"${five}"),
-    SIX(5,"${six}"),
-    SEVEN(6,"${seven}"),
-    EIGHT(7,"${eight}"),
+    ONE(0,"壹"),
+    TWO(1,"贰"),
+    THREE(2,"叁"),
+    FOUR(3,"肆"),
+    FIVE(4,"伍"),
+    SIX(5,"陆"),
+    SEVEN(6,"柒"),
+    EIGHT(7,"捌"),
     DEFAULT(9999,"")
     ;
     private Integer index;
