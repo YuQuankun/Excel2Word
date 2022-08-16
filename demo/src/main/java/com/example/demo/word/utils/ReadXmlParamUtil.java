@@ -93,7 +93,7 @@ public class ReadXmlParamUtil {
             if (matcher.find()) {
                 xmlContent8 = matcher.group();
             }
-            System.out.println(xmlContent8);
+            // System.out.println(xmlContent8);
 
             // 第二次正则,匹配出所有带百分号的数据
             Pattern pattern1 = Pattern.compile("<w:t>([0-9]|%)+</w:t>");
