@@ -189,6 +189,12 @@ public class PutData2WordUtil {
                     lowerNumNow = lowerNumNow + "日";
                     break;
 
+                    // 日期大于20增加十
+                case 6:
+                    if (Character.getNumericValue(now.charAt(i)) >= 2) {
+                        lowerNumNow = lowerNumNow + "十";
+                    }
+
                 default:
                     break;
             }
